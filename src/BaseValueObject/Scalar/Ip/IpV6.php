@@ -17,8 +17,7 @@ class IpV6 extends BaseString
     {
         if (!filter_var($value, FILTER_VALIDATE_IP, FILTER_FLAG_IPV6)) {
             throw new \InvalidArgumentException(
-                'The IPv6 %s is invalid.',
-                $value
+                sprintf('The IPv6 %s is invalid.', $value)
             );
         }
 
