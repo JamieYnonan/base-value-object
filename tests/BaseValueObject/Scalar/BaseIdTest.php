@@ -47,4 +47,14 @@ class BaseIdTest extends TestCase
             )
         );
     }
+
+    /**
+     * @test
+     */
+    public function validToString()
+    {
+        $idString = '469c1f37-24f6-4d93-9a7c-01ed940a0760';
+        $id = new IdValueObject($idString);
+        $this->assertEquals($idString, $id->__toString());
+    }
 }

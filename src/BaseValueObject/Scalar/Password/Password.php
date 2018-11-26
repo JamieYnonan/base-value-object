@@ -33,4 +33,9 @@ interface Password extends ValueObject
      * @return bool
      */
     public function verify(string $cleanPassword): bool;
+
+    /**
+     * @return string
+     */
+    public function __toString(): string;
 }

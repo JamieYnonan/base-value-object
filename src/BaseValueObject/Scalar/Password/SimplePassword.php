@@ -96,4 +96,12 @@ class SimplePassword extends BaseScalar implements Password
     {
         throw new \BadMethodCallException('Equals is not supported.');
     }
+
+    /**
+     * @return string
+     */
+    public function __toString(): string
+    {
+        return $this->value();
+    }
 }

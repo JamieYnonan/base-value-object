@@ -93,4 +93,13 @@ class SimplePasswordTest extends TestCase
         $this->assertInstanceOf(SimplePassword::class, $newPassword);
         $this->assertTrue($newPassword->verify($newCleanPassword));
     }
+
+    /**
+     * @test
+     */
+    public function validToString()
+    {
+        $password = SimplePassword::byCleanPassword($this->validCleanPassword);
+        $this->assertEquals($password->value(), $password->__toString());
+    }
 }

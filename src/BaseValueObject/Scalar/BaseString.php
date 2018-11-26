@@ -37,4 +37,12 @@ abstract class BaseString extends BaseScalar
     {
         return $this->value;
     }
+
+    /**
+     * @return string
+     */
+    public function __toString(): string
+    {
+        return $this->value();
+    }
 }
