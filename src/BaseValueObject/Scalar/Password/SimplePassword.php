@@ -14,7 +14,7 @@ class SimplePassword extends BaseScalar implements Password
 {
     const MIN_LENGTH = 6;
 
-    private $value;
+    protected $value;
 
     /**
      * @inheritdoc
