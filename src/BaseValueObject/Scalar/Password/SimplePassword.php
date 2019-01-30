@@ -22,7 +22,7 @@ class SimplePassword extends BaseScalar implements Password
     public static function byCleanPassword(string $cleanPassword): Password
     {
         Assert::minLength($cleanPassword, static::MIN_LENGTH);
-        return new self(password_hash($cleanPassword, PASSWORD_DEFAULT));
+        return new static(password_hash($cleanPassword, PASSWORD_DEFAULT));
     }
 
     /**
@@ -64,7 +64,7 @@ class SimplePassword extends BaseScalar implements Password
             );
         }
 
-        return self::byCleanPassword($cleanPassword);
+        return static::byCleanPassword($cleanPassword);
     }
 
     /**
